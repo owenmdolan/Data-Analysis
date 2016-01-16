@@ -25,14 +25,14 @@ Titles = ['General Interest in Politics (1 is high, 5 is low)',
 'Strong Affiliation? 1=Yes, 2=No',
 'Liberal or Conservative? 1=Extremely Liberal, 7=Extremely Conservative']
 
-    
+#These are all categorical variables   
 #For each column, I'm getting the overall counts and relative frequency and printing
 #Set n to zero for first title in the list "Titles."
 n=0
 
 for i in columns:
-    nd = pd.Categorical(i)
-    c1 = nd.describe()
-    print(Titles[n])
-    print (c1)
+    nd = pd.Categorical(i)       ##forcing each column to a categorical variable
+    c1 = nd.describe()           ##naming c1 as a table using the describe function to get counts and frequency
+    print(Titles[n])             ##Printing title from the list
+    print (c1)                   ##printing table
     n=n+1
